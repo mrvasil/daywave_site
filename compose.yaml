@@ -1,0 +1,10 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: daywave-site:latest
+    container_name: daywave-site
+    restart: unless-stopped
+    ports:
+      - "32005:80"
