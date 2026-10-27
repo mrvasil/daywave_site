@@ -331,6 +331,64 @@ img {
   transform: scaleX(-1);
 }
 
+.team-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.25rem, 1.5vw, 1rem);
+  margin-top: 0.5rem;
+}
+
+.team-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.team-link svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.team-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  color: var(--ink);
+  background: rgba(20, 230, 238, 0.05);
+}
+
+@media (hover: hover) {
+  .team-link:hover {
+    color: var(--accent);
+    border-color: rgba(20, 230, 238, 0.12);
+    background: rgba(20, 230, 238, 0.05);
+  }
+}
+
+@media (max-width: 380px) {
+  .team-links {
+    gap: 0.15rem;
+  }
+
+  .team-link {
+    gap: 0.4rem;
+    padding-inline: 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
 @keyframes logo-enter {
   from {
     opacity: 0;
@@ -465,7 +523,8 @@ img {
     animation: none;
   }
 
-  .hero__logo-shell {
+  .hero__logo-shell,
+  .team-link {
     transition: none;
   }
 }
